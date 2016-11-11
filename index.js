@@ -140,12 +140,14 @@ function sendIntroMessage(recipientId) {
             {
               type: "postback",
               title: "What's your story?",
-              payload: "yourstory"
+              payload: "yourstory",
+              sender_action: "typing_on"
             },
             {
               type: "postback",
               title: "Where you from?",
-              payload: "wherefrom"
+              payload: "wherefrom",
+              sender_action: "typing_on"
             }
           ]
         }
@@ -161,6 +163,7 @@ function sendGenericMessage(recipientId) {
     recipient: {
       id: recipientId
     },
+    sender_action: "typing_on",
     message: {
       attachment: {
         type: "template",
