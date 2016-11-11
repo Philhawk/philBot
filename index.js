@@ -69,7 +69,7 @@ function receivedPostback(event) {
     if (payload === 'Lets get in touch') {
       sendTextMessage(senderID, "Thanks for getting in touch! Now we all know that getting to know someone is hard, so why dont we make this process a little easier?");
       sendTextMessage(senderID, "What would you like to know?");
-      sendIntroMessage(senderID, "Potato called");
+      sendIntroMessage(senderID);
     } else {
       // When a postback is called, we'll send a message back to the sender to
       // let them know it was successful
@@ -127,6 +127,7 @@ function sendIntroMessage(recipientId) {
       payload: "wherefrom"
     }]
   }
+  callSendAPI(messageData);
 }
 
 
