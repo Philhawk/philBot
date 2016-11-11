@@ -68,9 +68,9 @@ function receivedPostback(event) {
 
     if (payload) {
       contextPayloadMatcher(senderID, payload)
+    } else {
+      sendTextMessage(senderID, "OK, mate, not sure what you mean");
     }
-
-    sendTextMessage(senderID, "OK, mate, not sure what you mean");
 }
 
 
