@@ -66,14 +66,25 @@ function receivedPostback(event) {
   console.log("Received postback for user %d and page %d with payload '%s' " +
     "at %d", senderID, recipientID, payload, timeOfPostback);
 
-    if (payload === 'Lets get in touch') {
-      sendTextMessage(senderID, "Thanks for getting in touch! Now we all know that getting to know someone is hard, so why dont we make this process a little easier?");
-      sendIntroMessage(senderID);
-    } else {
-      // When a postback is called, we'll send a message back to the sender to
-      // let them know it was successful
-      sendTextMessage(senderID, "Postback called");
+    if (payload) {
+      contextPayloadMatcher(senderID, payload)
     }
+
+    sendTextMessage(senderID, "OK, mate, not sure what you mean");
+}
+
+
+function contextPayloadMatcher(senderID, payload){
+  switch(true){
+    case 'yourstory':
+      sendGenericMessage(senderID);
+      break;
+    case 'wherefrom':
+      sendGenericMessage(senderID);
+      break;
+    default:
+      sendGenericMessage(senderID);
+  }
 }
 
 function receivedMessage(event) {
@@ -92,13 +103,13 @@ function receivedMessage(event) {
   var messageAttachments = message.attachments;
 
   if (messageText) {
-    contextMatcher(senderID, messageText)
+    contextMessageMatcher(senderID, messageText)
   } else if (messageAttachments) {
     sendTextMessage(senderID, "Um, sure ... thanks for that");
   }
 }
 
-function contextMatcher(senderID, messageText){
+function contextMessageMatcher(senderID, messageText){
   switch(true){
     case /generic/.test(messageText):
       sendGenericMessage(senderID);
