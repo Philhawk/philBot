@@ -84,6 +84,7 @@ function contextPayloadMatcher(senderID, payload){
       break;
     case 'yourstory':
       sendTextMessage(senderID, "Where to start ...");
+      sendTextWithImage(recipientId, "https://media.giphy.com/media/13wiTpAJWo8ASs/giphy.gif")
       break;
     default:
       sendGenericMessage(senderID);
@@ -146,7 +147,7 @@ function sendIntroMessage(recipientId) {
               payload: "yourstory"            },
             {
               type: "postback",
-              title: "What information can you give me?",
+              title: "I need more info",
               payload: "information"
             }
           ]
@@ -218,6 +219,35 @@ function sendTextMessage(recipientId, messageText) {
 
   callSendAPI(messageData);
 }
+
+function sendTextWithImage(recipientId, imageUrl) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      attachment: {
+        type: "image",
+        payload: {
+          url: imageUrl
+        }
+      }
+    }
+  };
+  callSendAPI(messageData);
+}
+
+"recipient":{
+    "id":"USER_ID"
+  },
+  "message":{
+    "attachment":{
+      "type":"image",
+      "payload":{
+        "url":"https://petersapparel.com/img/shirt.png"
+      }
+    }
+  }
 
 function callSendAPI(messageData) {
   request({
