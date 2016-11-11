@@ -125,12 +125,12 @@ function sendIntroMessage(recipientId) {
           buttons: [
             {
               type: "postback",
-              title: "What's your story?"
+              title: "What's your story?",
               payload: "yourstory"
             },
             {
               type: "postback",
-              title: "Where you from?"
+              title: "Where you from?",
               payload: "wherefrom"
             }
           ]
