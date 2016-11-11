@@ -68,7 +68,6 @@ function receivedPostback(event) {
 
     if (payload === 'Lets get in touch') {
       sendTextMessage(senderID, "Thanks for getting in touch! Now we all know that getting to know someone is hard, so why dont we make this process a little easier?");
-      sendTextMessage(senderID, "What would you like to know?");
       sendIntroMessage(senderID);
     } else {
       // When a postback is called, we'll send a message back to the sender to
@@ -118,15 +117,19 @@ function sendIntroMessage(recipientId) {
       id: recipientId
     },
     message: {
-        quick_replies: [{
-        content_type: "text",
-        title: "What's your story?",
-        payload: "personallife"
-      }, {
-        content_type: "text",
-        title: "Where are you from?",
-        payload: "wherefrom"
-      }]
+      text: "What would you like you know?"
+      quick_replies: [
+        {
+          content_type: "text",
+          title: "What's your story?",
+          payload: "personallife"
+        },
+        {
+          content_type: "text",
+          title: "Where are you from?",
+          payload: "wherefrom"
+        }
+      ]
     }
   }
   callSendAPI(messageData);
