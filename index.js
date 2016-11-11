@@ -126,7 +126,7 @@ function sendIntroMessage(recipientId) {
         content_type: "text",
         title: "Where are you from?",
         payload: "wherefrom"
-      }
+      }]
     }
   }
   callSendAPI(messageData);
