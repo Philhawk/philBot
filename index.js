@@ -117,15 +117,17 @@ function sendIntroMessage(recipientId) {
     recipient: {
       id: recipientId
     },
-    quick_replies: [{
-      content_type: "text",
-      title: "What's your story?",
-      payload: "personallife"
-    }, {
-      content_type: "text",
-      title: "Where are you from?",
-      payload: "wherefrom"
-    }]
+    message: {
+      quick_replies: [{
+        content_type: "text",
+        title: "What's your story?",
+        payload: "personallife"
+      }, {
+        content_type: "text",
+        title: "Where are you from?",
+        payload: "wherefrom"
+      }]
+    }
   }
   callSendAPI(messageData);
 }
