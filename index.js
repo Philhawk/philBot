@@ -76,10 +76,13 @@ function receivedPostback(event) {
 
 function contextPayloadMatcher(senderID, payload){
   switch(true){
-    case 'yourstory':
-      sendGenericMessage(senderID);
+    case 'Lets get in touch':
+      sendIntroMessage(senderID);
       break;
     case 'wherefrom':
+      sendGenericMessage(senderID);
+      break;
+    case 'yourstory':
       sendGenericMessage(senderID);
       break;
     default:
