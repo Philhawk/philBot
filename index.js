@@ -237,18 +237,6 @@ function sendTextWithImage(recipientId, imageUrl) {
   callSendAPI(messageData);
 }
 
-"recipient":{
-    "id":"USER_ID"
-  },
-  "message":{
-    "attachment":{
-      "type":"image",
-      "payload":{
-        "url":"https://petersapparel.com/img/shirt.png"
-      }
-    }
-  }
-
 function callSendAPI(messageData) {
   request({
     uri: 'https://graph.facebook.com/v2.6/me/messages',
