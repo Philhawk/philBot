@@ -117,7 +117,7 @@ function sendIntroMessage(recipientId) {
       id: recipientId
     },
     message: {
-      text: "What would you like you know?"
+      text: "What would you like you know?",
       quick_replies: [
         {
           content_type: "text",
