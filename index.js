@@ -84,7 +84,7 @@ function contextPayloadMatcher(senderID, payload){
       break;
     case 'yourstory':
       sendTextMessage(senderID, "Where to start ...");
-      sendTextWithImage(recipientId, "https://media.giphy.com/media/13wiTpAJWo8ASs/giphy.gif")
+      sendTextWithImage(senderID, "https://media.giphy.com/media/13wiTpAJWo8ASs/giphy.gif")
       break;
     default:
       sendGenericMessage(senderID);
