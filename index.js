@@ -75,7 +75,7 @@ function receivedPostback(event) {
 
 
 function contextPayloadMatcher(senderID, payload){
-  switch(true){
+  switch(payload){
     case 'Lets get in touch':
       sendIntroMessage(senderID);
       break;
