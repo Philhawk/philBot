@@ -83,7 +83,7 @@ function contextPayloadMatcher(senderID, payload){
       sendGenericMessage(senderID);
       break;
     case 'yourstory':
-      sendGenericMessage(senderID);
+      sendTextMessage(senderID, "Where to start ...");
       break;
     default:
       sendGenericMessage(senderID);
@@ -142,18 +142,19 @@ function sendIntroMessage(recipientId) {
           buttons: [
             {
               type: "postback",
-              title: "What's your story?",
+              title: "What's Phil's story?",
               payload: "yourstory"            },
             {
               type: "postback",
-              title: "Where you from?",
-              payload: "wherefrom"
+              title: "What information can you give me?",
+              payload: "information"
             }
           ]
         }
       }
     }
   }
+  sendTextMessage(recipientId, "I'm PhilBot 😄, the personal resume bot that'll hopefully help you answer a few questions about Phil.")
   callSendAPI(messageData);
 }
 
