@@ -130,7 +130,6 @@ function sendIntroMessage(recipientId) {
     recipient: {
       id: recipientId
     },
-    sender_action: "typing_on",
     message: {
       attachment: {
         type: "template",
@@ -161,7 +160,6 @@ function sendGenericMessage(recipientId) {
     recipient: {
       id: recipientId
     },
-    sender_action: "typing_on",
     message: {
       attachment: {
         type: "template",
@@ -193,7 +191,7 @@ function sendGenericMessage(recipientId) {
             }, {
               type: "postback",
               title: "Call Postback",
-              payload: "Payload for second bubble",
+              payload: "Payload for second bubble"
             }]
           }]
         }
