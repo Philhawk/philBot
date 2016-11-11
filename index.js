@@ -117,19 +117,25 @@ function sendIntroMessage(recipientId) {
       id: recipientId
     },
     message: {
-      text: "What would you like you know?",
-      quick_replies: [
-        {
-          content_type: "text",
-          title: "What's your story?",
-          payload: "personallife"
-        },
-        {
-          content_type: "text",
-          title: "Where are you from?",
-          payload: "wherefrom"
+      attachment: {
+        type: "template",
+        payload: {
+          template_type: "button",
+          text: "What would you like to know?",
+          buttons: [
+            {
+              type: "postback",
+              title: "What's your story?"
+              payload: "yourstory"
+            },
+            {
+              type: "postback",
+              title: "Where you from?"
+              payload: "wherefrom"
+            }
+          ]
         }
-      ]
+      }
     }
   }
   callSendAPI(messageData);
