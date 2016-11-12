@@ -83,8 +83,11 @@ function contextPayloadMatcher(senderID, payload){
       sendGenericMessage(senderID);
       break;
     case 'yourstory':
-      sendTextWithImage(senderID, "https://media.giphy.com/media/W8JIqASjSwtcA/giphy.gif")
       sendTextMessage(senderID, "Where to start ...");
+      sendTextWithImage(senderID, "https://media.giphy.com/media/W8JIqASjSwtcA/giphy.gif")
+      sendTextMessage(senderID, "Philip grew up in sunny Sydney, Australia before making the move over to New York in September 2016");
+      sendTextMessage(senderID, "He studied Media & Communications at Macquarie University and worked as a journalist before realising his true calling lied elsewhere");
+      sendTextWithImage(senderID, "https://media.giphy.com/media/MGdfeiKtEiEPS/giphy.gif")
       break;
     default:
       sendGenericMessage(senderID);
