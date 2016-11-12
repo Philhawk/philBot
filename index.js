@@ -227,7 +227,7 @@ function sendFollowUpQuickMessage(recipientId, questionText, button1title, butto
       id: recipientId
     },
     message: {
-      text: messageText,
+        text: questionText,
       quick_replies: [
         {
           content_type: "text",
