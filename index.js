@@ -220,7 +220,7 @@ function sendFollowUpQuickMessage(recipientId, messageText) {
       ]
     }
   }
-
+}
 
 function sendGenericMessage(recipientId) {
   var messageData = {
