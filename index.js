@@ -83,11 +83,17 @@ function contextPayloadMatcher(senderID, payload){
       sendGenericMessage(senderID);
       break;
     case 'information':
-      sendQuickFacts(senderID);
+
+      setTimeout(function() {
+        sendTextMessage(senderID, "So you want to know a few quick details about Phil?");
+      }, 500)
+      setTimeout(function() {
+        sendQuickFacts(senderID);
+      }, 2500)
       break;
     case 'yourstory':
       setTimeout(function() {
-          sendTextMessage(senderID, "Where to start ...");
+        sendTextMessage(senderID, "Where to start ...");
       }, 500)
       setTimeout(function() {
         sendTextWithImage(senderID, "https://media.giphy.com/media/W8JIqASjSwtcA/giphy.gif")
