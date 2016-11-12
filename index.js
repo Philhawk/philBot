@@ -225,7 +225,7 @@ function sendIntroMessage(recipientId) {
             {
               type: "postback",
               title: "What can PhilBot do?",
-              payload: "yourstory"
+              payload: "help"
             },
             {
               type: "postback",
@@ -349,7 +349,7 @@ function sendQuickFacts(recipientId) {
                 {
                 type: "postback",
                 title: "View Portfolio",
-                payload: "Payload for first bubble",
+                payload: "portfolio",
                 }
               ],
             },
