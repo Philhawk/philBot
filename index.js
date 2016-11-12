@@ -83,21 +83,23 @@ function contextPayloadMatcher(senderID, payload){
       sendGenericMessage(senderID);
       break;
     case 'yourstory':
+    
       setTimeout(function() {
           sendTextMessage(senderID, "Where to start ...");
       }, 500)
       setTimeout(function() {
         sendTextWithImage(senderID, "https://media.giphy.com/media/W8JIqASjSwtcA/giphy.gif")
-      }, 1000)
-      setTimeout(function() {
-        sendTextMessage(senderID, "Philip grew up in sunny Sydney, Australia before making the move over to New York in September 2016");
-      }, 1500)
-      setTimeout(function() {
-        sendTextMessage(senderID, "He studied Media & Communications at Macquarie University and worked as a journalist before realising his true calling lied elsewhere");
       }, 2000)
       setTimeout(function() {
+        sendTextMessage(senderID, "Philip grew up in sunny Sydney, Australia before making the move over to New York in September 2016");
+      }, 4500)
+      setTimeout(function() {
+        sendTextMessage(senderID, "He studied Media & Communications at Macquarie University and worked as a journalist before realising his true calling lied elsewhere");
+      }, 6500)
+      setTimeout(function() {
         sendTextWithImage(senderID, "https://media.giphy.com/media/MGdfeiKtEiEPS/giphy.gif")
-      }, 2500)
+      }, 8500)
+
       break;
     default:
       sendGenericMessage(senderID);
