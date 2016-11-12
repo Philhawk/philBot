@@ -148,7 +148,6 @@ function contextMessageMatcher(senderID, messageText){
       setTimeout(function(){
         sendGenericMessage(senderID);
       }, 2000);
-    ;
       break;
     case /experience/.test(messageText):
       sendGenericMessage(senderID);
@@ -185,7 +184,7 @@ function sendIntroMessage(recipientId) {
             },
             {
               type: "postback",
-              title: "Get the facts",
+              title: "Quick Facts",
               payload: "information"
             }
           ]
@@ -287,7 +286,7 @@ function sendQuickFacts(recipientId) {
           elements: [
             {
               title: "Work Experience",
-              subtitle: "Phil's Work Experience",
+              subtitle: "Find out info about his work experience",
               image_url: "https://media.giphy.com/media/3o6Zt0EuFVl8g98jok/giphy.gif",
               buttons: [
                 {
@@ -299,7 +298,7 @@ function sendQuickFacts(recipientId) {
             },
             {
               title: "Portfolio",
-              subtitle: "Phil's Portfolio",
+              subtitle: "See his portfolio",
               image_url: "https://media.giphy.com/media/XgYx40b7EKPu/giphy.gif",
               buttons: [
                 {
@@ -311,7 +310,7 @@ function sendQuickFacts(recipientId) {
             },
             {
               title: "Education",
-              subtitle: "Phil's Education History ",
+              subtitle: "Get more info about his education background",
               image_url: "http://68.media.tumblr.com/00017a0fa421177a169f926b7bda9cfb/tumblr_njq93rYxyQ1u17yx1o1_500.gif",
               buttons: [
                 {
