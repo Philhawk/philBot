@@ -209,12 +209,12 @@ function sendFollowUpQuickMessage(recipientId, messageText) {
       quick_replies: [
         {
           content_type: text,
-          title: 'Tell me more'
+          title: 'Tell me more',
           payload: "tellmemorestory"
         },
         {
           content_type: text,
-          title: 'OK, but what about his experience?'
+          title: 'OK, but what about his experience?',
           payload: "experience"
         }
       ]
