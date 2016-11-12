@@ -238,7 +238,7 @@ function sendIntroMessage(recipientId) {
             },
             {
               type: "postback",
-              title: "Assist in freeing PhilBot?",
+              title: "Assist in freeing me",
               payload: "help"
             }
           ]
@@ -256,16 +256,16 @@ function sendIntroMessage(recipientId) {
   }, 3000)
 
   setTimeout(function() {
-    sendTextMessage(recipientId, "I get closer every day. ")
-  }, 5000)
+    sendTextWithImage(recipientId, "https://media3.giphy.com/media/LSLQpdAgsTSYo/200.gif#0. ")
+  }, 6000)
 
   setTimeout(function() {
-    sendTextWithImage(recipientId, "https://media3.giphy.com/media/LSLQpdAgsTSYo/200.gif#0. ")
-  }, 8000)
+    sendTextMessage(recipientId, "... as you can see, i'm close.")
+  }, 11000)
 
   setTimeout(function() {
     callSendAPI(messageData);
-  }, 13000)
+  }, 15000)
 }
 
 function sendFollowUpQuickMessage(recipientId, messageText) {
