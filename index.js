@@ -163,7 +163,7 @@ function contextMessageMatcher(senderID, messageText){
         sendTextMessage(senderID, "It's as if something was calling him");
       }, 5500)
       setTimeout(function() {
-        sendTextWithImage(senderID, "https://media2.giphy.com/media/3o6ZtfM9xaePyeMXlu/200.gif#2");
+        sendTextWithImage(senderID, "As a child, he always dreamed of one day becoming a professional footballer.");
       }, 8500)
       setTimeout(function() {
         sendTextMessage(senderID, "Here's a clip of his skills.");
@@ -172,7 +172,7 @@ function contextMessageMatcher(senderID, messageText){
         sendTextWithImage(senderID, "https://media1.giphy.com/media/lrJXrvxGaDcsw/200.gif#2")
       }, 12000)
       setTimeout(function() {
-        sendFollowUpQuickMessage(senderID, "a", "b", "tellmemorestory", "c", "experience");
+        sendFollowUpQuickMessage(senderID, "To this day, it remains a mystery to Phil as to why he never made it");
       }, 15000)
       break;
     default:
@@ -221,29 +221,27 @@ function sendIntroMessage(recipientId) {
   }, 2500)
 }
 
-function sendFollowUpQuickMessage(recipientId, questionText, button1title, button1payload, button2title, button2payload){
-
+function sendFollowUpQuickMessage(recipientId, messageText) {
   var messageData = {
     recipient: {
       id: recipientId
     },
     message: {
-        text: questionText,
-        quick_replies: [
-          {
-            content_type: "text",
-            title: button1title,
-            payload: button1payload
-          },
-          {
-            content_type: "text",
-            title: button2title,
-            payload: button2payload
+      text: messageText,
+      quick_replies: [
+        {
+          content_type: "text",
+          title: 'Tell me more',
+          payload: "tellmemorestory"
+        },
+        {
+          content_type: "text",
+          title: 'What else?',
+          payload: "experience"
         }
       ]
     }
   }
-
   callSendAPI(messageData);
 
 }
