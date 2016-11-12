@@ -163,21 +163,46 @@ function contextMessageMatcher(senderID, messageText){
         sendTextMessage(senderID, "It's as if something was calling him");
       }, 5500)
       setTimeout(function() {
-        sendTextWithImage(senderID, "As a child, he always dreamed of one day becoming a professional footballer.");
-      }, 8500)
+        sendTextWithImage(senderID, "https://media2.giphy.com/media/xobxBtqQ4wZyg/200.gif#6")
+      }, 7600)
       setTimeout(function() {
-        sendTextMessage(senderID, "Here's a clip of his skills.");
-      }, 10000)
+        sendTextMessage(senderID, "He taught himself how to code, joined a startup and didn't look back");
+      }, 5500)
       setTimeout(function() {
-        sendTextWithImage(senderID, "https://media1.giphy.com/media/lrJXrvxGaDcsw/200.gif#2")
-      }, 12000)
+        sendTextWithImage(senderID, "https://media1.giphy.com/media/DnKNVeEjqMDaU/200.gif#24")
+      }, 11600)
       setTimeout(function() {
-        sendFollowUpQuickMessage(senderID, "To this day, it remains a mystery to Phil as to why he never made it");
-      }, 15000)
+        sendQuickReply(senderID, "But enough about that, i'm sure you want to see some examples of his work?", "Yes", "portfolio", "No", "help");
+      }, 9600)
       break;
     default:
       sendTextMessage(senderID, messageText);
   }
+}
+
+function sendQuickReply(recipientId, messageText, firstOptionTitle, firstOptionPayload, secondOptionTitle, secondOptionPayload) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      text: messageText,
+      quick_replies: [
+        {
+          content_type: "text",
+          title: firstOptionTitle,
+          payload: firstOptionPayload
+        },
+        {
+          content_type: "text",
+          title: secondOptionTitle,
+          payload: secondOptionPayload
+        }
+      ]
+    }
+  }
+  callSendAPI(messageData);
+
 }
 
 function sendIntroMessage(recipientId) {
