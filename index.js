@@ -220,6 +220,8 @@ function sendFollowUpQuickMessage(recipientId, messageText) {
       ]
     }
   }
+  callSendAPI(messageData);
+
 }
 
 function sendGenericMessage(recipientId) {
