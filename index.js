@@ -144,10 +144,16 @@ function sendIntroMessage(recipientId) {
             {
               type: "postback",
               title: "What's his story?",
-              payload: "yourstory"            },
+              payload: "yourstory"
+            },
             {
               type: "postback",
-              title: "What's your story?",
+              title: "What can PhilBot do?",
+              payload: "yourstory"
+            },
+            {
+              type: "postback",
+              title: "Get the facts?",
               payload: "information"
             }
           ]
