@@ -172,7 +172,7 @@ function contextMessageMatcher(senderID, messageText){
         sendTextWithImage(senderID, "https://media1.giphy.com/media/lrJXrvxGaDcsw/200.gif#2")
       }, 12000)
       setTimeout(function() {
-        sendFollowUpQuickMessage(senderID, "To this day, it remains a mystery to Phil as to why he never made it", "Tell me more", "tellmemorestory", "What else?", "experience");
+        sendFollowUpQuickMessage(senderID, "a", "b", "tellmemorestory", "c", "experience");
       }, 15000)
       break;
     default:
@@ -221,27 +221,29 @@ function sendIntroMessage(recipientId) {
   }, 2500)
 }
 
-function sendFollowUpQuickMessage(recipientId, questionText, button1title, button1payload, button2title, button2payload) {
+function sendFollowUpQuickMessage(recipientId, questionText, button1title, button1payload, button2title, button2payload){
+
   var messageData = {
     recipient: {
       id: recipientId
     },
     message: {
         text: questionText,
-      quick_replies: [
-        {
-          content_type: "text",
-          title: button1title,
-          payload: button1payload
-        },
-        {
-          content_type: "text",
-          title: button2title,
-          payload: button2payload
+        quick_replies: [
+          {
+            content_type: "text",
+            title: button1title,
+            payload: button1payload
+          },
+          {
+            content_type: "text",
+            title: button2title,
+            payload: button2payload
         }
       ]
     }
   }
+
   callSendAPI(messageData);
 
 }
