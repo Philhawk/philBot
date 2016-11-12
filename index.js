@@ -248,7 +248,7 @@ function sendQuickFacts(recipientId) {
           elements: [
             {
               title: "Education",
-              subtitle: "Phil's Education History",
+              subtitle: "Phil's Education History Phil's Education History Phil's Education History Phil's Education History Phil's Education History Phil's Education History ",
               image_url: "http://messengerdemo.parseapp.com/img/rift.png",
               buttons: [
                 {
