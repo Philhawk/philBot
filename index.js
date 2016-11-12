@@ -90,6 +90,7 @@ function contextPayloadMatcher(senderID, payload){
       setTimeout(function() {
         sendQuickFacts(senderID);
       }, 2500)
+
       break;
     case 'yourstory':
       setTimeout(function() {
@@ -99,15 +100,20 @@ function contextPayloadMatcher(senderID, payload){
         sendTextWithImage(senderID, "https://media.giphy.com/media/W8JIqASjSwtcA/giphy.gif")
       }, 3000)
       setTimeout(function() {
-        sendTextMessage(senderID, "Philip grew up in sunny Sydney, Australia before making the move over to New York in September 2016");
+        sendTextMessage(senderID, "Phil grew up in sunny Sydney, Australia before making the move over to New York in September 2016");
       }, 5500)
       setTimeout(function() {
-        sendTextMessage(senderID, "He studied Media & Communications at Macquarie University and worked as a journalist before realising his true calling lied elsewhere");
+        sendTextMessage(senderID, "As a child, he always dreamed of one day becoming a professional footballer.");
       }, 8500)
       setTimeout(function() {
-        sendTextWithImage(senderID, "https://media.giphy.com/media/MGdfeiKtEiEPS/giphy.gif")
+        sendTextMessage(senderID, "Here's a clip of his skills.");
       }, 10000)
-
+      setTimeout(function() {
+        sendTextWithImage(senderID, "https://media1.giphy.com/media/lrJXrvxGaDcsw/200.gif#2")
+      }, 12000)
+      setTimeout(function() {
+        sendFollowUpQuickMessage(senderID, "It's a travesty he never made it.");
+      }, 10000)
       break;
     default:
       sendGenericMessage(senderID);
@@ -192,6 +198,28 @@ function sendIntroMessage(recipientId) {
     callSendAPI(messageData);
   }, 2500)
 }
+
+function sendFollowUpQuickMessage(recipientId, messageText) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      text: messageText,
+      quick_replies: [
+        {
+          content_type: text,
+          title: 'Tell me more'
+          payload: "tellmemorestory"
+        },
+        {
+          content_type: text,
+          title: 'OK, but what about his experience?'
+          payload: "experience"
+        }
+      ]
+    }
+  }
 
 
 function sendGenericMessage(recipientId) {
