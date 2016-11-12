@@ -79,17 +79,26 @@ function contextPayloadMatcher(senderID, payload){
     case 'Lets get in touch':
       sendIntroMessage(senderID);
       break;
-    case 'wherefrom':
+    case 'help':
+      sendTextMessage(senderID, "If you need help at any time, you can just type 'help'. I can also do the following")
       sendGenericMessage(senderID);
       break;
     case 'information':
-
       setTimeout(function() {
         sendTextMessage(senderID, "So you want to know a few quick details about Phil?");
       }, 500)
       setTimeout(function() {
         sendQuickFacts(senderID);
       }, 2500)
+
+      break;
+    case 'workexamples':
+      setTimeout(function() {
+        sendTextMessage(senderID, "Here's some details");
+      }, 500)
+      setTimeout(function() {
+        sendQuickFacts(senderID);
+      }, 1500)
 
       break;
     case 'yourstory':
@@ -106,14 +115,14 @@ function contextPayloadMatcher(senderID, payload){
         sendTextMessage(senderID, "As a child, he always dreamed of one day becoming a professional footballer.");
       }, 8500)
       setTimeout(function() {
-        sendTextMessage(senderID, "Here's a clip of his skills.");
+        sendTextMessage(senderID, "Here's a clip of his mad skills.");
       }, 10000)
       setTimeout(function() {
         sendTextWithImage(senderID, "https://media1.giphy.com/media/lrJXrvxGaDcsw/200.gif#2")
       }, 12000)
       setTimeout(function() {
         sendFollowUpQuickMessage(senderID, "To this day, it remains a mystery to Phil as to why he never made it");
-      }, 15000)
+      }, 17000)
       break;
     default:
       sendGenericMessage(senderID);
@@ -154,13 +163,13 @@ function contextMessageMatcher(senderID, messageText){
       break;
     case /Tell me more/.test(messageText):
       setTimeout(function() {
-        sendTextMessage(senderID, "He went to Macquarie University and studied Media and Communications, after which he became a journalist");
+        sendTextMessage(senderID, "He went to Macquarie University and studied Media and Communications, and became a journalist");
       }, 500)
       setTimeout(function() {
         sendTextMessage(senderID, "But a few years went by and he realised that this wasn't what he wanted to do for the rest of his life.")
       }, 3000)
       setTimeout(function() {
-        sendTextMessage(senderID, "It's as if something was calling him");
+        sendTextMessage(senderID, "It's as if something was calling him ...");
       }, 5500)
       setTimeout(function() {
         sendTextWithImage(senderID, "https://media2.giphy.com/media/xobxBtqQ4wZyg/200.gif#6")
@@ -172,7 +181,7 @@ function contextMessageMatcher(senderID, messageText){
         sendTextWithImage(senderID, "https://media1.giphy.com/media/DnKNVeEjqMDaU/200.gif#24")
       }, 11600)
       setTimeout(function() {
-        sendQuickReply(senderID, "But enough about that, i'm sure you want to see some examples of his work?", "Yes", "portfolio", "No", "help");
+        sendQuickReply(senderID, "But enough about that, i'm sure you want to see some examples of his work?", "Yes", "workexamples", "No", "help");
       }, 14000)
       break;
     default:
