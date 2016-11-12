@@ -265,7 +265,7 @@ function sendIntroMessage(recipientId) {
 
   setTimeout(function() {
     callSendAPI(messageData);
-  }, 10000)
+  }, 13000)
 }
 
 function sendFollowUpQuickMessage(recipientId, messageText) {
