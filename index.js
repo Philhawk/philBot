@@ -153,7 +153,27 @@ function contextMessageMatcher(senderID, messageText){
       sendGenericMessage(senderID);
       break;
     case /Tell me more/.test(messageText):
-      sendTextMessage(senderID, 'OK THIS HIT')
+      setTimeout(function() {
+        sendTextMessage(senderID, "He went to Macquarie University and studied Media and Communications, after which he became a journalist");
+      }, 500)
+      setTimeout(function() {
+        sendTextMessage(senderID, "But a few years went by and he realised that this wasn't what he wanted to do for the rest of his life.")
+      }, 3000)
+      setTimeout(function() {
+        sendTextMessage(senderID, "It's as if something was calling him");
+      }, 5500)
+      setTimeout(function() {
+        sendTextWithImage(senderID, "https://media2.giphy.com/media/3o6ZtfM9xaePyeMXlu/200.gif#2");
+      }, 8500)
+      setTimeout(function() {
+        sendTextMessage(senderID, "Here's a clip of his skills.");
+      }, 10000)
+      setTimeout(function() {
+        sendTextWithImage(senderID, "https://media1.giphy.com/media/lrJXrvxGaDcsw/200.gif#2")
+      }, 12000)
+      setTimeout(function() {
+        sendFollowUpQuickMessage(senderID, "To this day, it remains a mystery to Phil as to why he never made it", "Tell me more", "tellmemorestory", "What else?", "experience");
+      }, 15000)
       break;
     default:
       sendTextMessage(senderID, messageText);
@@ -201,7 +221,7 @@ function sendIntroMessage(recipientId) {
   }, 2500)
 }
 
-function sendFollowUpQuickMessage(recipientId, messageText) {
+function sendFollowUpQuickMessage(recipientId, questionText, button1title, button1payload, button2title, button2payload) {
   var messageData = {
     recipient: {
       id: recipientId
@@ -211,13 +231,13 @@ function sendFollowUpQuickMessage(recipientId, messageText) {
       quick_replies: [
         {
           content_type: "text",
-          title: 'Tell me more',
-          payload: "tellmemorestory"
+          title: button1title,
+          payload: button1payload
         },
         {
           content_type: "text",
-          title: 'What else?',
-          payload: "experience"
+          title: button2title,
+          payload: button2payload
         }
       ]
     }
@@ -303,7 +323,7 @@ function sendQuickFacts(recipientId) {
               buttons: [
                 {
                 type: "postback",
-                title: "More Info",
+                title: "View Portfolio",
                 payload: "Payload for first bubble",
                 }
               ],
