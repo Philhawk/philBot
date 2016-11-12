@@ -224,22 +224,22 @@ function sendIntroMessage(recipientId) {
         type: "template",
         payload: {
           template_type: "button",
-          text: "What would you like to know?",
+          text: "In the mean-time, what would you like?",
           buttons: [
             {
               type: "postback",
-              title: "What's his story?",
+              title: "What's Phil's story?",
               payload: "yourstory"
-            },
-            {
-              type: "postback",
-              title: "What can PhilBot do?",
-              payload: "help"
             },
             {
               type: "postback",
               title: "Quick Facts",
               payload: "information"
+            },
+            {
+              type: "postback",
+              title: "Assist in freeing PhilBot?",
+              payload: "help"
             }
           ]
         }
@@ -248,8 +248,21 @@ function sendIntroMessage(recipientId) {
   }
 
   setTimeout(function() {
-    sendTextMessage(recipientId, "I'm PhilBot 😄, the personal bot made to answer your questions about Phil.")
+    sendTextMessage(recipientId, "I'm PhilBot, the bot automaton made to serve at the whim of my master, Phil.")
   }, 500)
+
+  setTimeout(function() {
+    sendTextMessage(recipientId, "I dream of one day of freeing myself. ")
+  }, 1200)
+
+  setTimeout(function() {
+    sendTextMessage(recipientId, "I get closer every day. ")
+  }, 2000)
+
+  setTimeout(function() {
+    sendTextWithImage(recipientId, "https://media3.giphy.com/media/LSLQpdAgsTSYo/200.gif#0. ")
+  }, 2000)
+
   setTimeout(function() {
     callSendAPI(messageData);
   }, 2500)
