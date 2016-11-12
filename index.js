@@ -167,13 +167,13 @@ function contextMessageMatcher(senderID, messageText){
       }, 7600)
       setTimeout(function() {
         sendTextMessage(senderID, "He taught himself how to code, joined a startup and didn't look back");
-      }, 5500)
+      }, 9800)
       setTimeout(function() {
         sendTextWithImage(senderID, "https://media1.giphy.com/media/DnKNVeEjqMDaU/200.gif#24")
       }, 11600)
       setTimeout(function() {
         sendQuickReply(senderID, "But enough about that, i'm sure you want to see some examples of his work?", "Yes", "portfolio", "No", "help");
-      }, 9600)
+      }, 14000)
       break;
     default:
       sendTextMessage(senderID, messageText);
