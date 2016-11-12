@@ -248,8 +248,8 @@ function sendQuickFacts(recipientId) {
           elements: [
             {
               title: "Education",
-              subtitle: "Phil's Education History Phil's Education History Phil's Education History Phil's Education History Phil's Education History Phil's Education History ",
-              image_url: "http://messengerdemo.parseapp.com/img/rift.png",
+              subtitle: "Phil's Education History ",
+              image_url: "http://68.media.tumblr.com/00017a0fa421177a169f926b7bda9cfb/tumblr_njq93rYxyQ1u17yx1o1_500.gif",
               buttons: [
                 {
                 type: "postback",
