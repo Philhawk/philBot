@@ -112,7 +112,7 @@ function contextPayloadMatcher(senderID, payload){
         sendTextWithImage(senderID, "https://media1.giphy.com/media/lrJXrvxGaDcsw/200.gif#2")
       }, 12000)
       setTimeout(function() {
-        sendFollowUpQuickMessage(senderID, "It's a travesty he never made it.");
+        sendFollowUpQuickMessage(senderID, "To this day, it remains a mystery to Phil as to why he never made it");
       }, 15000)
       break;
     default:
