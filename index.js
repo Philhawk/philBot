@@ -247,46 +247,40 @@ function sendQuickFacts(recipientId) {
           template_type: "generic",
           elements: [
             {
+              title: "Work Experience",
+              subtitle: "Phil's Work Experience",
+              image_url: "https://media.giphy.com/media/3o6Zt0EuFVl8g98jok/giphy.gif",
+              buttons: [
+                {
+                type: "postback",
+                title: "More Info",
+                payload: "Payload for first bubble",
+                }
+              ],
+            },
+            {
+              title: "Portfolio",
+              subtitle: "Phil's Portfolio",
+              image_url: "https://media.giphy.com/media/XgYx40b7EKPu/giphy.gif",
+              buttons: [
+                {
+                type: "postback",
+                title: "More Info",
+                payload: "Payload for first bubble",
+                }
+              ],
+            },
+            {
               title: "Education",
               subtitle: "Phil's Education History ",
               image_url: "http://68.media.tumblr.com/00017a0fa421177a169f926b7bda9cfb/tumblr_njq93rYxyQ1u17yx1o1_500.gif",
               buttons: [
                 {
                 type: "postback",
-                title: "Tell me more",
+                title: "More Info",
                 payload: "Payload for first bubble",
                 }
               ],
-            },
-            {
-              title: "Work Experience",
-              subtitle: "Phil's Work Experience",
-              item_url: "https://www.oculus.com/en-us/touch/",
-              image_url: "http://messengerdemo.parseapp.com/img/touch.png",
-              buttons: [{
-                type: "web_url",
-                url: "https://www.oculus.com/en-us/touch/",
-                title: "Open Web URL"
-              }, {
-                type: "postback",
-                title: "Call Postback",
-                payload: "Payload for second bubble"
-              }]
-            },
-            {
-              title: "Portfolio",
-              subtitle: "Phil's Portfolio",
-              item_url: "https://www.oculus.com/en-us/touch/",
-              image_url: "http://messengerdemo.parseapp.com/img/touch.png",
-              buttons: [{
-                type: "web_url",
-                url: "https://www.oculus.com/en-us/touch/",
-                title: "Open Web URL"
-              }, {
-                type: "postback",
-                title: "Call Postback",
-                payload: "Payload for second bubble"
-              }]
             }
           ]
         }
