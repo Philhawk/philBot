@@ -253,19 +253,19 @@ function sendIntroMessage(recipientId) {
 
   setTimeout(function() {
     sendTextMessage(recipientId, "I dream of one day of freeing myself. ")
-  }, 1200)
+  }, 3000)
 
   setTimeout(function() {
     sendTextMessage(recipientId, "I get closer every day. ")
-  }, 2000)
+  }, 5000)
 
   setTimeout(function() {
     sendTextWithImage(recipientId, "https://media3.giphy.com/media/LSLQpdAgsTSYo/200.gif#0. ")
-  }, 2000)
+  }, 8000)
 
   setTimeout(function() {
     callSendAPI(messageData);
-  }, 2500)
+  }, 10000)
 }
 
 function sendFollowUpQuickMessage(recipientId, messageText) {
