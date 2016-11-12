@@ -83,8 +83,8 @@ function contextPayloadMatcher(senderID, payload){
       sendGenericMessage(senderID);
       break;
     case 'yourstory':
+      sendTextWithImage(senderID, "https://media.giphy.com/media/W8JIqASjSwtcA/giphy.gif")
       sendTextMessage(senderID, "Where to start ...");
-      sendTextWithImage(senderID, "https://media.giphy.com/media/13wiTpAJWo8ASs/giphy.gif")
       break;
     default:
       sendGenericMessage(senderID);
@@ -143,11 +143,11 @@ function sendIntroMessage(recipientId) {
           buttons: [
             {
               type: "postback",
-              title: "What's Phil's story?",
+              title: "What's his story?",
               payload: "yourstory"            },
             {
               type: "postback",
-              title: "I need more info",
+              title: "What's your story?",
               payload: "information"
             }
           ]
@@ -155,7 +155,7 @@ function sendIntroMessage(recipientId) {
       }
     }
   }
-  sendTextMessage(recipientId, "I'm PhilBot 😄, the personal resume bot that'll hopefully help you answer a few questions about Phil.")
+  sendTextMessage(recipientId, "I'm PhilBot 😄, the personal bot made to answer your questions about Phil.")
   callSendAPI(messageData);
 }
 
