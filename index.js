@@ -153,6 +153,9 @@ function contextMessageMatcher(senderID, messageText){
     case /experience/.test(messageText):
       sendGenericMessage(senderID);
       break;
+    case /Tell me more/.test(messageText):
+      sendTextMessage(senderID, 'OK THIS HIT')
+      break;
     default:
       sendTextMessage(senderID, messageText);
   }
