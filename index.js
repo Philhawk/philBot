@@ -83,22 +83,21 @@ function contextPayloadMatcher(senderID, payload){
       sendGenericMessage(senderID);
       break;
     case 'yourstory':
-    
       setTimeout(function() {
           sendTextMessage(senderID, "Where to start ...");
       }, 500)
       setTimeout(function() {
         sendTextWithImage(senderID, "https://media.giphy.com/media/W8JIqASjSwtcA/giphy.gif")
-      }, 2000)
+      }, 3000)
       setTimeout(function() {
         sendTextMessage(senderID, "Philip grew up in sunny Sydney, Australia before making the move over to New York in September 2016");
-      }, 4500)
+      }, 5500)
       setTimeout(function() {
         sendTextMessage(senderID, "He studied Media & Communications at Macquarie University and worked as a journalist before realising his true calling lied elsewhere");
-      }, 6500)
+      }, 8500)
       setTimeout(function() {
         sendTextWithImage(senderID, "https://media.giphy.com/media/MGdfeiKtEiEPS/giphy.gif")
-      }, 8500)
+      }, 10000)
 
       break;
     default:
@@ -176,8 +175,13 @@ function sendIntroMessage(recipientId) {
       }
     }
   }
-  sendTextMessage(recipientId, "I'm PhilBot 😄, the personal bot made to answer your questions about Phil.")
-  callSendAPI(messageData);
+
+  setTimeout(function() {
+    sendTextMessage(recipientId, "I'm PhilBot 😄, the personal bot made to answer your questions about Phil.")
+  }, 500)
+  setTimeout(function() {
+    callSendAPI(messageData);
+  }, 2500)
 }
 
 
