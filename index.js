@@ -82,6 +82,9 @@ function contextPayloadMatcher(senderID, payload){
     case 'wherefrom':
       sendGenericMessage(senderID);
       break;
+    case 'information':
+      sendQuickFacts(senderID);
+      break;
     case 'yourstory':
       setTimeout(function() {
           sendTextMessage(senderID, "Where to start ...");
