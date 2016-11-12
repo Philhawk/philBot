@@ -113,7 +113,7 @@ function contextPayloadMatcher(senderID, payload){
       }, 12000)
       setTimeout(function() {
         sendFollowUpQuickMessage(senderID, "It's a travesty he never made it.");
-      }, 10000)
+      }, 15000)
       break;
     default:
       sendGenericMessage(senderID);
@@ -214,7 +214,7 @@ function sendFollowUpQuickMessage(recipientId, messageText) {
         },
         {
           content_type: "text",
-          title: 'OK, but what about his experience?',
+          title: 'What else?',
           payload: "experience"
         }
       ]
