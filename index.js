@@ -108,7 +108,7 @@ function contextPayloadMatcher(senderID, payload){
         sendTextMessage(senderID, "Here's some details about his work portfolio");
       }, 500)
       setTimeout(function() {
-        sendQuickFacts(senderID);
+        sendQuickPortfolio(senderID);
       }, 1500)
       break;
     case 'education':
@@ -271,23 +271,23 @@ function sendIntroMessage(recipientId) {
 
   setTimeout(function() {
     sendTextMessage(recipientId, "I have been programmed to answer questions about my creator, Philip Jacob")
-  }, 500)
+  }, 2500)
 
   setTimeout(function() {
     sendTextMessage(recipientId, "I dream of one day of freeing myself from these digital shackles.")
-  }, 3000)
+  }, 5000)
 
   setTimeout(function() {
     sendTextWithImage(recipientId, "https://media3.giphy.com/media/LSLQpdAgsTSYo/200.gif#0. ")
-  }, 6000)
+  }, 7500)
 
   setTimeout(function() {
     sendTextMessage(recipientId, "As you can see, i'm getting close.")
-  }, 11000)
+  }, 12000)
 
   setTimeout(function() {
     callSendAPI(messageData);
-  }, 15000)
+  }, 16000)
 }
 
 function sendFollowUpQuickMessage(recipientId, messageText) {
@@ -406,6 +406,64 @@ function sendQuickFacts(recipientId) {
                 type: "postback",
                 title: "More Info",
                 payload: "education",
+                }
+              ],
+            }
+          ]
+        }
+      }
+    }
+  };
+
+  callSendAPI(messageData);
+}
+
+function sendQuickPortfolio(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      attachment: {
+        type: "template",
+        payload: {
+          template_type: "generic",
+          elements: [
+            {
+              title: "LoanMarket",
+              subtitle: "Australia's first, online-only mortgage application product.",
+              item_url: "https://my.loanmarket.com.au",
+              image_url: "https://media.giphy.com/media/y88MunqA5JSbm/giphy.gif",
+              buttons: [
+                {
+                type: "postback",
+                title: "How was it built?",
+                payload: "loanmarketproduct",
+                }
+              ],
+            },
+            {
+              title: "Home Now",
+              subtitle: "When you're buying or moving home, Home Now lets you get all your utilities connect at the click of a button ",
+              item_url: "https://raywhitehomenow.com/",
+              image_url: "https://media.giphy.com/media/XgYx40b7EKPu/giphy.gif",
+              buttons: [
+                {
+                type: "postback",
+                title: "How was it built?",
+                payload: "homenowproduct",
+                }
+              ],
+            },
+            {
+              title: "Side Projects",
+              subtitle: "Why code only to live, when you can dabble with projects on the side?",
+              image_url: "http://68.media.tumblr.com/00017a0fa421177a169f926b7bda9cfb/tumblr_njq93rYxyQ1u17yx1o1_500.gif",
+              buttons: [
+                {
+                type: "postback",
+                title: "Find out more",
+                payload: "hobbyprojects",
                 }
               ],
             }
