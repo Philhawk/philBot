@@ -446,7 +446,7 @@ function sendQuickPortfolio(recipientId) {
               title: "Home Now",
               subtitle: "When you're buying or moving home, Home Now lets you get all your utilities connect at the click of a button ",
               item_url: "https://raywhitehomenow.com/",
-              image_url: "https://media.giphy.com/media/XgYx40b7EKPu/giphy.gif",
+              image_url: "https://media.giphy.com/media/9o1leJXvoAJva/giphy.gif",
               buttons: [
                 {
                 type: "postback",
