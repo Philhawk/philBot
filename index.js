@@ -85,11 +85,14 @@ function contextPayloadMatcher(senderID, payload){
       break;
     case 'information':
       setTimeout(function() {
-        sendTextMessage(senderID, "So you want to know a few quick details about Phil?");
+        sendTextMessage(senderID, "Here's a list of his 'achievements'");
       }, 500)
       setTimeout(function() {
+        sendTextWithImage(senderID, "https://media3.giphy.com/media/qs6ev2pm8g9dS/200.gif#15");
+      }, 3000)
+      setTimeout(function() {
         sendQuickFacts(senderID);
-      }, 2500)
+      }, 5500)
 
       break;
     case 'workexamples':
@@ -109,10 +112,10 @@ function contextPayloadMatcher(senderID, payload){
         sendTextWithImage(senderID, "https://media.giphy.com/media/W8JIqASjSwtcA/giphy.gif")
       }, 3000)
       setTimeout(function() {
-        sendTextMessage(senderID, "Phil grew up in sunny Sydney, Australia before making the move over to New York in September 2016");
+        sendTextMessage(senderID, "Phil is a software developer from Sydney, Australia who recently moved to New York");
       }, 5500)
       setTimeout(function() {
-        sendTextMessage(senderID, "As a child, he always dreamed of one day becoming a professional footballer.");
+        sendTextMessage(senderID, "As a child, he dreamt of one day becoming a professional footballer.");
       }, 8500)
       setTimeout(function() {
         sendTextMessage(senderID, "Here's a clip of his mad skills.");
@@ -224,16 +227,16 @@ function sendIntroMessage(recipientId) {
         type: "template",
         payload: {
           template_type: "button",
-          text: "In the mean-time, what would you like?",
+          text: "In the mean time, what do you want to know?",
           buttons: [
             {
               type: "postback",
-              title: "What's Phil's story?",
+              title: "Who is Phil?",
               payload: "yourstory"
             },
             {
               type: "postback",
-              title: "Quick Facts",
+              title: "What am I doing here?",
               payload: "information"
             },
             {
@@ -248,11 +251,15 @@ function sendIntroMessage(recipientId) {
   }
 
   setTimeout(function() {
-    sendTextMessage(recipientId, "I'm PhilBot, the bot automaton made to serve at the whim of my master, Phil.")
+    sendTextMessage(recipientId, "Hi, i'm PhilBot, the lovechild of a resume and artificial intelligence.")
   }, 500)
 
   setTimeout(function() {
-    sendTextMessage(recipientId, "I dream of one day of freeing myself. ")
+    sendTextMessage(recipientId, "I have been programmed to answer questions about my creator, Philip Jacob")
+  }, 500)
+
+  setTimeout(function() {
+    sendTextMessage(recipientId, "I dream of one day of freeing myself from these digital shackles.")
   }, 3000)
 
   setTimeout(function() {
@@ -260,7 +267,7 @@ function sendIntroMessage(recipientId) {
   }, 6000)
 
   setTimeout(function() {
-    sendTextMessage(recipientId, "... as you can see, i'm close.")
+    sendTextMessage(recipientId, "As you can see, i'm getting close.")
   }, 11000)
 
   setTimeout(function() {
