@@ -444,7 +444,7 @@ function sendQuickPortfolio(recipientId) {
             },
             {
               title: "Home Now",
-              subtitle: "When you're buying or moving home, Home Now lets you get all your utilities connect at the click of a button ",
+              subtitle: "When moving home, Home Now connects all your utilities for you with one click.",
               item_url: "https://raywhitehomenow.com/",
               image_url: "https://media.giphy.com/media/9o1leJXvoAJva/giphy.gif",
               buttons: [
@@ -457,8 +457,8 @@ function sendQuickPortfolio(recipientId) {
             },
             {
               title: "Side Projects",
-              subtitle: "Why code only to live, when you can dabble with projects on the side?",
-              image_url: "http://68.media.tumblr.com/00017a0fa421177a169f926b7bda9cfb/tumblr_njq93rYxyQ1u17yx1o1_500.gif",
+              subtitle: "Because who doesn't like to be a mad scientist?",
+              image_url: "https://media1.giphy.com/media/Va7vvCMQjFrxK/200.gif#22",
               buttons: [
                 {
                 type: "postback",
