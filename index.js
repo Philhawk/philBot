@@ -236,12 +236,12 @@ function sendIntroMessage(recipientId) {
             },
             {
               type: "postback",
-              title: "What am I doing here?",
+              title: "I'm in a rush",
               payload: "information"
             },
             {
               type: "postback",
-              title: "Assist in freeing me",
+              title: "Save PhilBot",
               payload: "help"
             }
           ]
@@ -290,7 +290,7 @@ function sendFollowUpQuickMessage(recipientId, messageText) {
         },
         {
           content_type: "text",
-          title: 'What else?',
+          title: "I'm in a rush",
           payload: "experience"
         }
       ]
@@ -361,7 +361,7 @@ function sendQuickFacts(recipientId) {
             {
               title: "Work Experience",
               subtitle: "Find out info about his work experience",
-              image_url: "https://media.giphy.com/media/3o6Zt0EuFVl8g98jok/giphy.gif",
+              image_url: "https://media.giphy.com/media/mqmBnQhz76TRK/giphy.gif",
               buttons: [
                 {
                 type: "postback",
