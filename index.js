@@ -95,14 +95,29 @@ function contextPayloadMatcher(senderID, payload){
       }, 5500)
 
       break;
-    case 'workexamples':
+    case 'workexperience':
       setTimeout(function() {
-        sendTextMessage(senderID, "Here's some details");
+        sendTextMessage(senderID, "Here's some details about his work experience");
       }, 500)
       setTimeout(function() {
         sendQuickFacts(senderID);
       }, 1500)
-
+      break;
+    case 'portfolio':
+      setTimeout(function() {
+        sendTextMessage(senderID, "Here's some details about his work portfolio");
+      }, 500)
+      setTimeout(function() {
+        sendQuickFacts(senderID);
+      }, 1500)
+      break;
+    case 'education':
+      setTimeout(function() {
+        sendTextMessage(senderID, "Here's some details about his work education");
+      }, 500)
+      setTimeout(function() {
+        sendQuickFacts(senderID);
+      }, 1500)
       break;
     case 'yourstory':
       setTimeout(function() {
@@ -366,7 +381,7 @@ function sendQuickFacts(recipientId) {
                 {
                 type: "postback",
                 title: "More Info",
-                payload: "Payload for first bubble",
+                payload: "workexperience",
                 }
               ],
             },
@@ -390,7 +405,7 @@ function sendQuickFacts(recipientId) {
                 {
                 type: "postback",
                 title: "More Info",
-                payload: "Payload for first bubble",
+                payload: "education",
                 }
               ],
             }
