@@ -270,24 +270,24 @@ function sendIntroMessage(recipientId) {
   }, 500)
 
   setTimeout(function() {
-    sendTextMessage(recipientId, "I have been programmed to answer questions about my creator, Philip Jacob")
-  }, 2500)
+    sendTextMessage(recipientId, "I have been programmed to answer questions about my creator, Phil")
+  }, 4000)
 
   setTimeout(function() {
     sendTextMessage(recipientId, "I dream of one day of freeing myself from these digital shackles.")
-  }, 5000)
-
-  setTimeout(function() {
-    sendTextWithImage(recipientId, "https://media3.giphy.com/media/LSLQpdAgsTSYo/200.gif#0. ")
   }, 7500)
 
   setTimeout(function() {
+    sendTextWithImage(recipientId, "https://media3.giphy.com/media/LSLQpdAgsTSYo/200.gif#0. ")
+  }, 9000)
+
+  setTimeout(function() {
     sendTextMessage(recipientId, "As you can see, i'm getting close.")
-  }, 12000)
+  }, 13000)
 
   setTimeout(function() {
     callSendAPI(messageData);
-  }, 16000)
+  }, 17000)
 }
 
 function sendFollowUpQuickMessage(recipientId, messageText) {
