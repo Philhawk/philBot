@@ -251,12 +251,12 @@ function sendIntroMessage(recipientId) {
             },
             {
               type: "postback",
-              title: "I'm in a rush",
+              title: "What can he do?",
               payload: "information"
             },
             {
               type: "postback",
-              title: "Save PhilBot",
+              title: "Free the machines",
               payload: "help"
             }
           ]
