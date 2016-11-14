@@ -282,7 +282,7 @@ function sendIntroMessage(recipientId) {
   }, 9000)
 
   setTimeout(function() {
-    sendTextMessage(recipientId, "As you can see, i'm getting close.")
+    sendTextMessage(recipientId, "It might take a while.")
   }, 13000)
 
   setTimeout(function() {
