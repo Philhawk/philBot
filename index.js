@@ -184,6 +184,9 @@ function contextMessageMatcher(senderID, messageText){
     case /experience/.test(messageText):
       sendGenericMessage(senderID);
       break;
+    case /rush/.test(messageText):
+      contextPayloadMatcher(senderID, messageText);
+      break;
     case /Tell me more/.test(messageText):
       setTimeout(function() {
         sendTextMessage(senderID, "He went to Macquarie University and studied Media and Communications, and became a journalist");
