@@ -212,25 +212,32 @@ function contextMessageMatcher(senderID, messageText){
   }
 }
 
-function sendCallReply(){
+
+function sendCallReply(recipientId, messageData){
   var messageData = {
     recipient: {
       id: recipientId
     },
     message: {
-      text: messageText,
-      quick_replies: [
-        {
-          content_type: "text",
-          title: firstOptionTitle,
-          payload: firstOptionPayload
-        },
-        {
-          content_type: "text",
-          title: secondOptionTitle,
-          payload: secondOptionPayload
+      attachment: {
+        type: "template",
+        payload: {
+          template_type: "button",
+          text: "Would you like to call Phil?"
+          buttons: [
+            {
+              type: "phone_number",
+              title: "Yes",
+              payload: "+19172915658"
+            },
+            {
+              type: "postback",
+              title: "No",
+              payload: "help"
+            }
+          ]
         }
-      ]
+      }
     }
   }
   callSendAPI(messageData);
@@ -516,19 +523,6 @@ function sendTextMessage(recipientId, messageText) {
   };
 
   callSendAPI(messageData);
-}
-
-function sendTextMessageNoEcho(recipientId, messageText) {
-  var messageData = {
-    recipient: {
-      id: recipientId
-    },
-    message: {
-      text: messageText
-    }
-  };
-
-  thanksForMessage(messageData);
 }
 
 function sendTextWithImage(recipientId, imageUrl) {
