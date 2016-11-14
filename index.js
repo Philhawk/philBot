@@ -108,11 +108,8 @@ function contextPayloadMatcher(senderID, payload){
         sendTextMessage(senderID, "Leave a message and, if you'd like, your contact details and it'll be sent to Phil");
       }, 500)
       setTimeout(function() {
-        sendTextMessage(senderID, "Leave a message and, if you'd like, your contact details and it'll be sent to Phil");
+        sendTextMessage(senderID, "Thanks! Your message has been sent");
       }, 9000)
-      setTimeout(function() {
-        sendQuickFacts(senderID);
-      }, 1500)
       break;
     case 'portfolio':
       setTimeout(function() {
