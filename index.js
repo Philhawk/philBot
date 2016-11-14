@@ -223,7 +223,7 @@ function sendCallReply(recipientId, messageData){
         type: "template",
         payload: {
           template_type: "button",
-          text: "Would you like to call Phil?"
+          text: "Would you like to call Phil?",
           buttons: [
             {
               type: "phone_number",
