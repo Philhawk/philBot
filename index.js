@@ -317,7 +317,7 @@ function sendFollowUpQuickMessage(recipientId, messageText) {
         {
           content_type: "text",
           title: "I'm in a rush",
-          payload: "experience"
+          payload: "information"
         }
       ]
     }
