@@ -105,7 +105,7 @@ function contextPayloadMatcher(senderID, payload){
       break;
     case 'DEVELOPER_DEFINED_PAYLOAD_FOR_START_ORDER':
       setTimeout(function() {
-        sendQuickReply(senderID, "Would you like to call Phil?", "Yes", "callphil", "No", "help");
+        sendCallReply(senderID, "Would you like to call Phil?")
       }, 500)
       break;
     case 'portfolio':
@@ -213,7 +213,7 @@ function contextMessageMatcher(senderID, messageText){
 }
 
 
-function sendCallReply(recipientId, messageData){
+function sendCallReply(recipientId, messageText){
   var messageData = {
     recipient: {
       id: recipientId
@@ -223,7 +223,7 @@ function sendCallReply(recipientId, messageData){
         type: "template",
         payload: {
           template_type: "button",
-          text: "Would you like to call Phil?",
+          text: messageText,
           buttons: [
             {
               type: "phone_number",
