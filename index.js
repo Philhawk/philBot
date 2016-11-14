@@ -176,7 +176,7 @@ function receivedMessage(event) {
 
 function contextMessageMatcher(senderID, messageText){
   switch(true){
-    case /generic/.test(messageText):
+    case /^generic/.test(messageText):
       setTimeout(function(){
         sendGenericMessage(senderID);
       }, 2000);
