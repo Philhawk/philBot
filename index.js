@@ -103,6 +103,17 @@ function contextPayloadMatcher(senderID, payload){
         sendQuickFacts(senderID);
       }, 1500)
       break;
+    case 'DEVELOPER_DEFINED_PAYLOAD_FOR_START_ORDER':
+      setTimeout(function() {
+        sendTextMessage(senderID, "Leave a message and, if you'd like, your contact details and it'll be sent to Phil");
+      }, 500)
+      setTimeout(function() {
+        sendTextMessage(senderID, "Leave a message and, if you'd like, your contact details and it'll be sent to Phil");
+      }, 9000)
+      setTimeout(function() {
+        sendQuickFacts(senderID);
+      }, 1500)
+      break;
     case 'portfolio':
       setTimeout(function() {
         sendTextMessage(senderID, "Here's some details about his work portfolio");
