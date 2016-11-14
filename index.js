@@ -185,7 +185,15 @@ function contextMessageMatcher(senderID, messageText){
       sendGenericMessage(senderID);
       break;
     case /rush/.test(messageText):
-      contextPayloadMatcher(senderID, messageText);
+      setTimeout(function() {
+        sendTextMessage(senderID, "Here's a list of his 'achievements'");
+      }, 500)
+      setTimeout(function() {
+        sendTextWithImage(senderID, "https://media3.giphy.com/media/qs6ev2pm8g9dS/200.gif#15");
+      }, 3000)
+      setTimeout(function() {
+        sendQuickFacts(senderID);
+      }, 5500)
       break;
     case /Tell me more/.test(messageText):
       setTimeout(function() {
