@@ -182,7 +182,12 @@ function contextMessageMatcher(senderID, messageText){
       }, 2000);
       break;
     case /experience/.test(messageText):
-      sendGenericMessage(senderID);
+      setTimeout(function() {
+        sendTextMessage(senderID, "Here's some details about his experience");
+      }, 500)
+      setTimeout(function() {
+        sendQuickPortfolio(senderID);
+      }, 1500)
       break;
     case /rush/.test(messageText):
       setTimeout(function() {
