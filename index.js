@@ -105,11 +105,8 @@ function contextPayloadMatcher(senderID, payload){
       break;
     case 'DEVELOPER_DEFINED_PAYLOAD_FOR_START_ORDER':
       setTimeout(function() {
-        sendTextMessage(senderID, "Leave a message and, if you'd like, your contact details and it'll be sent to Phil");
+        sendQuickReply(senderID, "Would you like to call Phil?", "Yes", "callphil", "No", "help");
       }, 500)
-      setTimeout(function() {
-        sendTextMessage(senderID, "Thanks! Your message has been sent");
-      }, 9000)
       break;
     case 'portfolio':
       setTimeout(function() {
@@ -213,6 +210,30 @@ function contextMessageMatcher(senderID, messageText){
     default:
       sendTextMessage(senderID, messageText);
   }
+}
+
+function sendCallReply(){
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      text: messageText,
+      quick_replies: [
+        {
+          content_type: "text",
+          title: firstOptionTitle,
+          payload: firstOptionPayload
+        },
+        {
+          content_type: "text",
+          title: secondOptionTitle,
+          payload: secondOptionPayload
+        }
+      ]
+    }
+  }
+  callSendAPI(messageData);
 }
 
 function sendQuickReply(recipientId, messageText, firstOptionTitle, firstOptionPayload, secondOptionTitle, secondOptionPayload) {
@@ -495,6 +516,19 @@ function sendTextMessage(recipientId, messageText) {
   };
 
   callSendAPI(messageData);
+}
+
+function sendTextMessageNoEcho(recipientId, messageText) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      text: messageText
+    }
+  };
+
+  thanksForMessage(messageData);
 }
 
 function sendTextWithImage(recipientId, imageUrl) {
