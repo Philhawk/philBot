@@ -458,7 +458,7 @@ function sendQuickPortfolio(recipientId) {
             {
               title: "Side Projects",
               subtitle: "Because who doesn't like to be a mad scientist?",
-              image_url: "https://media1.giphy.com/media/Va7vvCMQjFrxK/200.gif#22",
+              image_url: "https://media.giphy.com/media/qhY3EfioLSshO/giphy.gif",
               buttons: [
                 {
                 type: "postback",
